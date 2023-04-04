@@ -1,0 +1,358 @@
+{% load staticfiles %} {% static "" as baseurl %}
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description" content="Chameleon Admin is a modern Bootstrap 4 webapp &amp; admin dashboard html template with a large number of components, elegant design, clean and organized code.">
+    <meta name="keywords" content="admin template, Chameleon admin template, dashboard template, gradient admin template, responsive admin template, webapp, eCommerce dashboard, analytic dashboard">
+    <meta name="author" content="ThemeSelect">
+    <title>Rooms Management</title>
+    <link rel="apple-touch-icon" href="{{baseurl}}theme-assets/images/ico/apple-icon-120.png">
+    <link rel="shortcut icon" type="image/x-icon" href="{{baseurl}}theme-assets/images/ico/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700" rel="stylesheet">
+    <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
+    <!-- BEGIN VENDOR CSS-->
+    <link rel="stylesheet" type="text/css" href="{{baseurl}}theme-assets/css/vendors.css">
+    <!-- END VENDOR CSS-->
+    <!-- BEGIN CHAMELEON  CSS-->
+    <link rel="stylesheet" type="text/css" href="{{baseurl}}theme-assets/css/app-lite.css">
+    <!-- END CHAMELEON  CSS-->
+    <!-- BEGIN Page Level CSS-->
+    <link rel="stylesheet" type="text/css" href="{{baseurl}}theme-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="{{baseurl}}theme-assets/css/core/colors/palette-gradient.css">
+    <!-- END Page Level CSS-->
+    <!-- BEGIN Custom CSS-->
+    <!-- END Custom CSS-->
+    <style>
+        table.ed th {
+            background: linear-gradient(#3137e4, purple);
+            padding: 10px;
+            color: aliceblue;
+        }
+        
+        table.d th {
+            background: linear-gradient(rgba(0, 255, 255, 0.938), rgba(0, 0, 255, 0.842));
+            padding: 10px;
+            color: aliceblue;
+        }
+        
+        table.d tr:nth-child(even) {
+            background: linear-gradient(rgba(0, 255, 255, 0.171), rgba(0, 0, 255, 0.226));
+        }
+    </style>
+</head>
+
+<body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu" data-color="bg-gradient-x-purple-blue" data-col="2-columns">
+
+    <!-- fixed-top-->
+    <nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light">
+        <div class="navbar-wrapper">
+            <div class="navbar-container content">
+                <div class="collapse navbar-collapse show" id="navbar-mobile">
+                    <ul class="nav navbar-nav mr-auto float-left">
+                        <li class="nav-item d-block d-md-none"><a class="nav-link nav-menu-main menu-toggle hidden-xs" href="#"><i class="ft-menu"></i></a></li>
+
+
+                        <ul class="dropdown-menu">
+                            <li class="arrow_box">
+                                <form>
+                                    <div class="input-group search-box">
+                                        <div class="position-relative has-icon-right full-width">
+                                            <div class="form-control-position navbar-search-close"><i class="ft-x">   </i></div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav float-right">
+
+
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav float-right">
+
+
+                        </li>
+                        <li class="dropdown dropdown-user nav-item">
+                            <a class="dropdown-toggle nav-link dropdown-user-link" href="#" data-toggle="dropdown"> <span class="avatar avatar-online"><img src="{{baseurl}}theme-assets/images/portrait/small/avatar-s-19.png" alt="avatar"></span></a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div class="arrow_box_right"><a class="dropdown-item" href="#"><span class="avatar avatar-online"><img src="{{baseurl}}theme-assets/images/portrait/small/avatar-s-19.png" alt="avatar"><span class="user-name text-bold-700 ml-1">Admin</span></span></a>
+                                    <a class="dropdown-item" href="hm"><i class="ft-power"></i> Logout</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true" data-img="theme-assets/images/backgrounds/02.jpg">
+        <div class="navbar-header">
+            <ul class="nav navbar-nav flex-row">
+                <li class="nav-item mr-auto">
+
+                    <h4 class="brand-text" style="margin-top: 25px; margin-left: 10px;">
+                        <center><b><font color="red">HOTEL</font> <font color="#eeae01">MANAGEMENT</font></b></center>
+                    </h4>
+
+                </li>
+                <li class="nav-item d-md-none"><a class="nav-link close-navbar"><i class="ft-x"></i></a></li>
+            </ul>
+        </div>
+        <div class="main-menu-content">
+            <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+                <li class="nav-item"><a href="checkin"><span>CheckIn</span></a>
+                </li>
+                <li class="nac-item"><a href="checkout"><span>CheckOut</span></a>
+                </li>
+                <li class="active"><a href="#"><span>Rooms Management</span></a>
+                    <ul>
+                        <li class="{% if addr %}active{% else %}nav-item{% endif %}"><a href="addr"><span>Add Rooms</span></a></li>
+                        <li class="{% if delr %}active{% else %}nav-item{% endif %}"><a href="delr"><span>Delete Rooms</span></a></li>
+                        <li class="{% if er %}active{% else %}nav-item{% endif %}"><a href="er"><span>Edit Rooms</span></a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <div class="navigation-background"></div>
+    </div>
+
+    <div class="app-content content">
+        <div class="content-wrapper">
+            <div class="content-wrapper-before"></div>
+            <div class="content-header row">
+                <div class="content-header-left col-md-4 col-12 mb-2">
+                    <h1 class="content-header-title" style="margin-left: 400px;font-size: 40px;display: inline-table;">{% if addr %}Add_Rooms{% endif %}{% if delr %}Delete_Rooms{% endif %}{% if er %}Edit_Rooms{% endif %}</h1>
+                </div>
+                <div class="content-header-right col-md-8 col-12">
+                    <div class="breadcrumbs-top float-md-right">
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <br>
+                <br>
+                <center>
+                    {% if addr %}
+                    <form action="addrooms">
+                        <table>
+                            <tr>
+                                <td>Room Number</td>
+                                <td><input type="text" name="roomno" value="{{roomno}}" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>Category</td>
+                                <td>
+                                    <select name="category">
+                                        <option>Select</option>
+<option value="Luxury Room">Luxury Room</option>
+<option value="AC Room">AC Room</option>
+<option value="Non-AC Room">Non-AC Room</option>
+</select>
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <table class="ed" width="20%">
+                            <tr>
+                                <th>
+                                    <center>Category</center>
+                                </th>
+                                <th>
+                                    <center>Price/Room</center>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <Center>Luxary Room</Center>
+                                </td>
+                                <td>
+                                    <center>5000</center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <center>AC Room</center>
+                                </td>
+                                <td>
+                                    <center>3000</center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <center>Non-AC Room</center>
+                                </td>
+                                <td>
+                                    <center>1500</center>
+                                </td>
+                            </tr>
+                        </table><br>
+                        <table>
+                            <tr>
+                                <td colspan=2>
+                                    <center><input type="submit" value="Add"></td>
+                            </tr>
+                        </table>
+                    </form>
+                    {% endif %} {% if delr %} {% if nr %}
+                    <br> {{nr}} {% endif %} {% if rooms %}
+                    <table width="60%" class="d">
+                        <tr>
+                            <th width="15%">
+                                <center>Room Number</center>
+                            </th>
+                            <th width="15%">
+                                <center>Category</center>
+                            </th>
+                            <th width="15%">
+                                <center>Price</center>
+                            </th>
+                            <th width="15%">
+                                <center>Delete</center>
+                            </th>
+                        </tr>
+                        {% for i in rooms %}
+                        <tr>
+                            <td>
+                                <center>{{i.0}}</center>
+                            </td>
+                            <td>
+                                <center>{{i.1}}</center>
+                            </td>
+                            <td>
+                                <center>{{i.2}}</center>
+                            </td>
+                            <td>
+                                <center><u><a href="deleteroom?rno={{i.0}}">Delete</a></u>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    {% endif %} {% endif %} {% if er %} {% if nr %}
+                    <br> {{nr}} {% endif %} {% if rooms %}
+                    <table width="60%" class="d">
+                        <tr>
+                            <th width="15%">
+                                <center>Room Number</center>
+                            </th>
+                            <th width="15%">
+                                <center>Category</center>
+                            </th>
+                            <th width="15%">
+                                <center>Price</center>
+                            </th>
+                            <th width="15%">
+                                <center>Delete/Edit</center>
+                            </th>
+                        </tr>
+                        {% for i in rooms %}
+                        <tr>
+                            <td>
+                                <center>{{i.0}}</center>
+                            </td>
+                            <td>
+                                <center>{{i.1}}</center>
+                            </td>
+                            <td>
+                                <center>{{i.2}}</center>
+                            </td>
+                            <td>
+                                <center><u><a href="editrooms?rno={{i.0}}">Edit</a></u>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+                    {% endif %}
+
+                    <br> {% if d %}
+                    <form action="editroom">
+                        <table>
+                            <tr>
+                                <td>Room Number</td>
+                                <td><input type="text" name="roomno" value="{{d.0}}" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>Category</td>
+                                <td>
+                                    <select name="category">
+                    <option>Select</option>
+                    <option value="Luxury Room">Luxury Room</option>
+                    <option value="AC Room">AC Room</option>
+                    <option value="Non-AC Room">Non-AC Room</option>
+                    </select>
+                                </td>
+                            </tr>
+                        </table>
+                        <br>
+                        <table class="ed" width="20%">
+                            <tr>
+                                <th>
+                                    <center>Category</center>
+                                </th>
+                                <th>
+                                    <center>Price/Room</center>
+                                </th>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <Center>Luxary Room</Center>
+                                </td>
+                                <td>
+                                    <center>5000</center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <center>AC Room</center>
+                                </td>
+                                <td>
+                                    <center>3000</center>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <center>Non-AC Room</center>
+                                </td>
+                                <td>
+                                    <center>1500</center>
+                                </td>
+                            </tr>
+                        </table><br>
+                        <center><input type="submit" value="Edit"></center>
+                    </form>
+                    {% endif %}
+                    <br> {% endif %}
+
+
+                    </center>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- ////////////////////////////////////////////////////////////////////////////-->
+
+
+
+
+    <!-- BEGIN VENDOR JS-->
+    <script src="{{baseurl}}theme-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+    <!-- BEGIN VENDOR JS-->
+    <!-- BEGIN PAGE VENDOR JS-->
+    <!-- END PAGE VENDOR JS-->
+    <!-- BEGIN CHAMELEON  JS-->
+    <script src="{{baseurl}}theme-assets/js/core/app-menu-lite.js" type="text/javascript"></script>
+    <script src="{{baseurl}}theme-assets/js/core/app-lite.js" type="text/javascript"></script>
+    <!-- END CHAMELEON  JS-->
+    <!-- BEGIN PAGE LEVEL JS-->
+    <!-- END PAGE LEVEL JS-->
+</body>
+
+</html>
